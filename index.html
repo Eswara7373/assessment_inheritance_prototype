@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>1. Create 2 objects - parent and child. Attach methods to parent and use those methods in child object using parents prototype</h4>
+    <pre>
+        function student(){
+            this.name = "eswar"
+        }
+        student.prototype.name = "prasad"
+        student.prototype.age = 23
+        
+        let obj = new student()
+        console.log(obj.name)
+        console.log(obj.age)
+    </pre>
+    <hr>
+    <h4>2. Write code to explain prototype chaining</h4>
+    <pre>
+        let obj1 = {
+        a: 1,
+        __proto__: {
+          b: 3,
+          c: 4,
+          __proto__: {
+            d: 5,
+          },
+        },
+      };
+      console.log(obj1.d); 
+    </pre>
+    <hr>
+    <h4>3. Add a method to calculate sum of all elements in Array in array's protype, use that method to calculate sum for multiple arrays</h4>
+    <pre>
+        const array1 = [10, 22, 13, 34];
+        const add= 0;
+        const sum = array1.reduce(
+        (previousValue, currentValue) => previousValue + currentValue,add);
+           console.log(sum);</pre>
+    <hr>
+    <h4>4. Write a JavaScript function to retrieve all the names of object's own and inherited properties.</h4>
+    <pre>function allKeys(obj) {
+        if (!isObject(obj)) return [];
+        var keys = [];
+        for (var key in obj) keys.push(key);
+        return keys;
+    }
+    function isObject(obj) 
+    {
+        var type = typeof obj;
+        return type === 'function' || type === 'object' && !!obj;
+      }
+    function Student(name) {
+      this.name = name;
+    }
+    Student.prototype.rollno = true;
+    console.log(allKeys(new Student("eswar")));</pre>
+    <script src="script.js"></script>
+</body>
+</html>
